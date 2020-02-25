@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace xadrez_console {
     class Tela {
 
-        public static void imprimirPartida(PartidaDeXadrez partida) { 
+        public static void imprimirPartida(PartidaDeXadrez partida) {
             imprimirTabuleiro(partida.tab);
             Console.WriteLine();
             imprimirPecasCapturadas(partida);
@@ -22,7 +22,7 @@ namespace xadrez_console {
             else {
                 Console.WriteLine("XEQUEMATE!");
                 Console.WriteLine("Vencedor: " + partida.jogadorAtual);
-                
+
             }
         }
 
@@ -49,10 +49,10 @@ namespace xadrez_console {
 
         public static void imprimirTabuleiro(Tabuleiro tab) {
 
-            for (int i=0; i<tab.linhas; i++) {
+            for (int i = 0; i < tab.linhas; i++) {
                 Console.Write(8 - i + " ");
-                for (int j=0; j<tab.colunas; j++) {
-                   imprimirPeca(tab.peca(i, j));
+                for (int j = 0; j < tab.colunas; j++) {
+                    imprimirPeca(tab.peca(i, j));
                 }
                 Console.WriteLine();
             }
@@ -107,6 +107,5 @@ namespace xadrez_console {
                 Console.Write(" ");
             }
         }
-
     }
 }
