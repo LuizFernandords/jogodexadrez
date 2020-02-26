@@ -14,6 +14,8 @@ namespace xadrez {
         private HashSet<Peca> pecas;
         private HashSet<Peca> capturadas;
         public bool xeque { get; set; }
+        /*private Peca vulenravelEnPassant;*/
+
         public PartidaDeXadrez() {
             tab = new Tabuleiro(8, 8);
             turno = 1;
@@ -112,7 +114,19 @@ namespace xadrez {
                 turno++;
                 mudaJogador();
             }
+
+            Peca p = tab.peca(destino);
+
+            //#jogada especial en passant
+
+            if (p is Peao && (destino.linha == origem.linha - 2 || destino.linha == origem.linha + 2)) {
+              /*vulenravelEnPassant = p;*/
+            }
+            else {
+                /*vulenravelEnPassant = false;*/
+            }
         }
+        
 
         public void validarPosicaoDeOrigem(Posicao pos) {
             if (tab.peca(pos) == null) {
